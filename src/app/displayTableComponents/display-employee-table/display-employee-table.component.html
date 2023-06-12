@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark table-secondary">
+            <tr>
+                <th colspan="100%"><h5>Employee GET</h5></th>
+            </tr>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">First</th>
+                <th scope="col">Middle</th>
+                <th scope="col">Last</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Blood</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">City</th>
+                <th scope="col">Batch</th>
+                <th scope="col">Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of objects">
+                <th scope="row">{{obj.id}}</th>
+                <td>{{obj.firstName}}</td>
+                <td>{{obj.middleName}}</td>
+                <td>{{obj.lastName}}</td>
+                <td>{{obj.age}}</td>
+                <td>{{obj.gender}}</td>
+                <td>{{obj.bloodGroup}}</td>
+                <td>{{obj.dateOfBirth | date}}</td>
+                <td>{{obj.nationality}}</td>
+                <td>{{obj.cityAddress}}</td>
+                <td>{{obj.batch}}</td>
+                <td>{{obj.departmentName}}</td>
+            </tr>
+        </tbody>
+
+        <div class="gap"></div>
+
+        <thead class="thead-dark table-secondary">
+            <tr>
+                <th colspan="100%"><h5>Employee GET ID</h5></th>
+            </tr>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">First</th>
+                <th scope="col">Middle</th>
+                <th scope="col">Last</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Blood</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">City</th>
+                <th scope="col">Batch</th>
+                <th scope="col">Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of object">
+                <th scope="row">{{obj.id}}</th>
+                <td>{{obj.firstName}}</td>
+                <td>{{obj.middleName}}</td>
+                <td>{{obj.lastName}}</td>
+                <td>{{obj.age}}</td>
+                <td>{{obj.gender}}</td>
+                <td>{{obj.bloodGroup}}</td>
+                <td>{{obj.dateOfBirth | date}}</td>
+                <td>{{obj.nationality}}</td>
+                <td>{{obj.cityAddress}}</td>
+                <td>{{obj.batch}}</td>
+                <td>{{obj.departmentName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

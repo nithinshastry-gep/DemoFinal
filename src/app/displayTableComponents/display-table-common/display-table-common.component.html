@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <table class="table table-bordered table-hover">
+        <ng-container *ngIf="renderObjectsTable == true">
+            <thead class="thead-dark table-secondary">
+                <tr>
+                    <th colspan="100%">
+                        <h5>{{displayName}}</h5>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col" *ngFor="let keys of objectKeys">
+                        {{keys}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obj of objectsKeyMap">
+                    <th scope="row">
+                        {{obj[0][0]}}
+                    </th>
+                    <td *ngFor="let o of obj[1]">
+                        {{o}}
+                    </td>
+                </tr>
+            </tbody>
+            <div class="gap"></div>
+        </ng-container>
+
+    </table>
+</div>

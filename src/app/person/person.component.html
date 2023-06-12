@@ -1,0 +1,278 @@
+<app-sidebar></app-sidebar>
+<div class="mb-3">
+    <div class="container-fluid margin-top">
+        <div class="container">
+            <app-display-table-common [objects]="persons" displayName="Person GET"></app-display-table-common>
+            <app-display-table-common [objects]="person" displayName="Person GET BY ID"></app-display-table-common>
+            <!-- <app-display-table [objects]="persons" [object]="person"></app-display-table> -->
+
+            <app-display-table-common [objects]="departments" displayName="Departments GET"></app-display-table-common>
+            <!-- <app-display-department-table [objects]="departments"></app-display-department-table> -->
+        </div>
+    </div>
+</div>
+<br>
+<div class="container mb-3">
+    <div class="rounded border container" data-bs-toggle="collapse" href="#getbyid" role="button" aria-expanded="false"
+         aria-controls="collapseExample">
+        <div class="mb-1 div-text">
+            GET BY ID
+        </div>
+    </div>
+    <div class="collapse" id="getbyid">
+        <div class="card card-body">
+            <div class="rounded border container">
+                <div class="mb-3">
+                    <form #form="ngForm" (ngSubmit)="onSubmitGet(form.value)">
+                        <div class="mb-3">
+                            <label>Object</label><br>
+                            <pre>{{form.value | json}}</pre>
+                        </div>
+                        <hr class="bg-danger border-2 border-top">
+                        <div ngModelGroup="getById" class="mb-3">
+                            <label>Id: </label>
+                            <input type="number" ngModel class="form-control" name="id" placeholder="Id">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary right">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="rounded border container" data-bs-toggle="collapse" href="#post" role="button" aria-expanded="false"
+         aria-controls="collapseExample">
+        <div class="mb-1 div-text">
+            POST
+        </div>
+    </div>
+    <div class="collapse" id="post">
+        <div class="card card-body">
+            <div class="rounded border container">
+                <form #postForm="ngForm" (ngSubmit)="onSubmitPost(postForm.value)">
+                    <div ngModelGroup="post">
+                        <div class="mb-3">
+                            <label>Object</label><br>
+                            <pre>{{postForm.value | json}}</pre>
+                        </div>
+                        <hr class="bg-danger border-2 border-top">
+                        <div class="mb-3" ngModelGroup="name">
+                            <label>Name : </label>
+                            <div class="mb-2"><input type="text" ngModel class="form-control" name="firstName"
+                                       placeholder="First Name"></div>
+                            <div class="mb-2"><input type="text" ngModel class="form-control" name="middleName"
+                                       placeholder="MIddle Name"></div>
+                            <div class="mb-2"><input type="text" ngModel class="form-control" name="lastName"
+                                       placeholder="Last Name"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Age : </label>
+                            <input type="number" ngModel class="form-control" name="age" placeholder="Age">
+                        </div>
+                        <div class="form mb-3">
+                            <label>Gender</label>
+                            <select ngModel name="gender" class="form-select">
+                                <!-- <option disabled selected>Choose</option> -->
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form mb-3">
+                            <label>Blood Group</label>
+                            <select ngModel name="bloodGroup" class="form-select">
+                                <!-- <option disabled selected>Choose</option> -->
+                                <option value="A+" selected>A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label>Date Of Birth : </label>
+                            <input type="datetime-local" ngModel class="form-control" name="dateOfBirth"
+                                   placeholder="Date Of Birth">
+                        </div>
+                        <div class="mb-3">
+                            <label>Nationality : </label>
+                            <input type="text" ngModel class="form-control" name="nationality"
+                                   placeholder="Nationality">
+                        </div>
+                        <div class="mb-3">
+                            <label>cityAddress : </label>
+                            <input type="text" ngModel class="form-control" name="cityAddress"
+                                   placeholder="City Address">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary right">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="rounded border container" data-bs-toggle="collapse" href="#delete" role="button" aria-expanded="false"
+         aria-controls="collapseExample">
+        <div class="mb-1 div-text">
+            DELETE
+        </div>
+    </div>
+    <div class="collapse" id="delete">
+        <div class="card card-body">
+            <div class="rounded border container">
+                <div class="mb-3">
+                    <form #delForm="ngForm" (ngSubmit)="onSubmitDel(delForm.value)">
+                        <div class="mb-3">
+                            <label>Object</label><br>
+                            <pre>{{delForm.value | json}}</pre>
+                        </div>
+                        <hr class="bg-danger border-2 border-top">
+                        <div ngModelGroup="deleteId" class="mb-3">
+                            <label>Id: </label>
+                            <input type="number" ngModel class="form-control" name="id" placeholder="Id">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary right">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="rounded border container" data-bs-toggle="collapse" href="#update" role="button" aria-expanded="false"
+         aria-controls="collapseExample">
+        <div class="mb-1 div-text">
+            UPDATE
+        </div>
+    </div>
+    <div class="collapse" id="update">
+        <div class="card card-body">
+            <div class="rounded border container">
+                <form #updateForm="ngForm" (ngSubmit)="onSubmitUpdate(updateForm.value)">
+                    <div ngModelGroup="update">
+                        <div class="mb-3">
+                            <label>Object</label><br>
+                            <pre>{{updateForm.value | json}}</pre>
+                        </div>
+                        <hr class="bg-danger border-2 border-top">
+                        <div class="mb-3">
+                            <label>Person Id : </label>
+                            <input type="number" ngModel="id" class="form-control" name="id" placeholder="Id">
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" (click)="onClickUpdatePersonUpdate(updateForm.value)"
+                                    class="btn btn-info">Update</button>
+                        </div>
+                        <hr class="bg-danger border-2 border-top">
+                        <div class="mb-3" ngModelGroup="name">
+                            <label>Name : </label>
+                            <div class="mb-2"><input type="text" [ngModel]="personUpdate.firstName" class="form-control"
+                                       name="firstName" placeholder="First Name"></div>
+                            <div class="mb-2"><input type="text" [ngModel]="personUpdate.middleName"
+                                       class="form-control" name="middleName" placeholder="MIddle Name"></div>
+                            <div class="mb-2"><input type="text" [ngModel]="personUpdate.lastName" class="form-control"
+                                       name="lastName" placeholder="Last Name"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Age : </label>
+                            <input type="number" [ngModel]="personUpdate.age" class="form-control" name="age"
+                                   placeholder="Age">
+                        </div>
+                        <div class="form mb-3">
+                            <label>Gender</label>
+                            <select [ngModel]="personUpdate.gender" name="gender" class="form-select">
+                                <!-- <option disabled selected>Choose</option> -->
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form mb-3">
+                            <label>Blood Group</label>
+                            <select [ngModel]="personUpdate.bloodGroup" name="bloodGroup" class="form-select">
+                                <!-- <option disabled selected>Choose</option> -->
+                                <option value="A+" selected>A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label>Date Of Birth : </label>
+                            <input type="datetime-local" [ngModel]="personUpdate.dateOfBirth" class="form-control"
+                                   name="dateOfBirth" placeholder="Date Of Birth">
+                        </div>
+                        <div class="mb-3">
+                            <label>Nationality : </label>
+                            <input type="text" [ngModel]="personUpdate.nationality" class="form-control"
+                                   name="nationality" placeholder="Nationality">
+                        </div>
+                        <div class="mb-3">
+                            <label>cityAddress : </label>
+                            <input type="text" [ngModel]="personUpdate.cityAddress" class="form-control"
+                                   name="cityAddress" placeholder="City Address">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary right">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container border rounded mb-3">
+    <h1>{{ title }}</h1>
+    <form [formGroup]="testForm" (ngSubmit)="reactiveFormHandler(testForm.value)">
+        <label>Object</label><br>
+        {{testForm.value.id}}
+        <pre>{{testForm.value | json}}</pre>
+        <hr class="bg-danger border-2 border-top">
+        <div class="mb-3">
+            <label>Id: </label> 
+            <div *ngIf="id.invalid && (id.touched || id.dirty)">
+                <!-- <span *ngIf="id.hasError['required'] == true">please enter the id</span>
+                <span *ngIf="id.hasError('maxlength') == true">id exceeds maximum length</span> -->
+            </div>
+            <input type="number" class="form-control" formControlName="id" placeholder="please enter the id here">
+        </div>
+        <div class="mb-3" formGroupName="name">
+            <label>Name: </label> <span *ngIf="firstName && firstName.invalid && firstName.touched">Please enter the firstName</span>
+            <div class="mb-2">
+                <div class="mb-1">
+                    <label>First Name: </label>
+                    <input type="text" class="form-control" formControlName="firstName">
+                </div>
+                <div class="mb-1">
+                    <label>Middle Name: </label>
+                    <input type="text" class="form-control" formControlName="middleName">
+                </div>
+                <div class="mb-1">
+                    <label>Last Name: </label>
+                    <input type="text" class="form-control" formControlName="lastName">
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label>Mail ID: </label>
+            <input type="email" class="form-control" formControlName="email">
+        </div>
+        <button type="submit" [disabled]="testForm.invalid" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary right">Reset</button>
+    </form>
+</div>

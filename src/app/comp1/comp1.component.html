@@ -1,0 +1,36 @@
+<!-- <pre>{{persons[0] | json}}</pre> -->
+<!-- <pre>{{departments | json}}</pre> -->
+<!-- <pre>{{employees | json}}</pre> -->
+
+<!-- <pre>{{person | json}}</pre> -->
+<!-- <pre>{{department | json}}</pre> -->
+<!-- <pre>{{employee | json}}</pre> -->
+
+<!-- <pre>{{departmentResponse}}</pre> -->
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>MiddleName</th>
+        <th>LastName</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>BloodGroup</th>
+        <th>DateOfBirth</th>
+        <th>Nationality</th>
+        <th>CityAddress</th>
+    </tr>
+    <tr *ngFor="let person of persons">
+        <td>{{person.id}}</td>
+        <td>{{person.firstName}}</td>
+        <td>{{person.middleName}}</td>
+        <td>{{person.lastName}}</td>
+        <td>{{person.age}}</td>
+        <td>{{person.gender}}</td>
+        <td>{{person.bloodGroup}}</td>
+        <td>{{person.dateOfBirtd}}</td>
+        <td>{{person.nationality}}</td>
+        <td>{{person.cityAddress}}</td>
+    </tr>
+</table>

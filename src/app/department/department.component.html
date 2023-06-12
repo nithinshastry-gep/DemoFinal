@@ -1,0 +1,42 @@
+<app-sidebar></app-sidebar>
+<div class="mb-3">
+    <div class="container1 mb-3 margin-top">
+        <div class="container bordered">
+            <!-- <app-display-department-table [objects]="departments" [object]="department"></app-display-department-table> -->
+            <app-display-table-common [objects]="departments" displayName="Department"></app-display-table-common>
+            <app-display-table-common [objects]="department" displayName="Department GET BY ID"></app-display-table-common>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container mb-3">
+    <div class="rounded border container" data-bs-toggle="collapse" href="#getbyid" role="button" aria-expanded="false"
+         aria-controls="collapseExample">
+        <div class="mb-1 div-text">
+            GET BY ID
+        </div>
+    </div>
+    <div class="collapse" id="getbyid">
+        <div class="card card-body">
+            <div class="rounded border container">
+                <div class="mb-3">
+                    <form #form="ngForm" (ngSubmit)="onSubmitGet(form.value)">
+                        <div class="mb-3">
+                            <label>Object</label><br>
+                            <pre>{{form.value | json}}</pre>
+                        </div>
+                        <hr class="bg-danger border-2 border-top">
+                        <div ngModelGroup="getById" class="mb-3">
+                            <label>Id: </label>
+                            <input type="number" ngModel class="form-control" name="id" placeholder="Id">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary right">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
